@@ -1,16 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineScape</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+  <!-- Menú lateral -->
+  <nav id="menu" class="menu">
+    <h3>Menú Principal</h3>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Aventuras</a></li>
+      <li><a href="#">Animadas</a></li>
+      <li><a href="#">Drama</a></li>
+      <li><a href="#">Comedia</a></li>
+      <li><a href="#">Ficción</a></li>
+      <li><a href="#">Super Héroes</a></li>
+    </ul>
+    <div class="menu-footer">
+      <a href="#">Mi Cuenta</a>
+      <a href="#">Cerrar Sesión</a>
+    </div>
+  </nav>
 
+  <!-- Contenedor principal -->
+  <div class="container">
+    <header>
+      <div class="user-info">
+        <img src="img/user.png" alt="perfil" class="avatar">
+        <div>
+          <p>Bienvenida</p>
+          <h2>Isabella</h2>
+        </div>
+      </div>
+      <button id="menu-btn" class="menu-btn"><img src="img/menu.png" alt=""></button>
+    </header>
 
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Encuentra tu película favorita">
+      <button><img src="img/search.png" width="15px" height="15px" alt=""></button>
+    </div>
 
+    <main id="movies-grid" class="movies-grid"></main>
 
-    <script src="js/main.js"></script>
+    <footer>
+      <button>Acción</button>
+      <button>Romance</button>
+      <button>Terror</button>
+    </footer>
+  </div>
+
+  <!-- Modal detalle de película -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal">&times;</span>
+      <img id="modal-img" src="" alt="">
+      <h2 id="modal-title"></h2>
+      <p class="tag" id="modal-category"></p>
+      <p id="modal-description"></p>
+      <p id="modal-cast"></p>
+      <button class="watch-btn">Ver Película</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>

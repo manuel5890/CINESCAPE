@@ -1,0 +1,290 @@
+body {
+  background-color: #0f1115;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* === Estilos del encabezado (user-info) === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0e0f13;
+  padding: 15px 25px;
+  border-bottom: 1px solid #222;
+  color: #fff;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00ffff; /* borde tipo cian */
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* ===== Menú lateral ===== */
+.menu {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 180px;
+  height: 100vh;
+  background-color: #1b1d23;
+  padding: 20px;
+  transition: right 0.4s ease;
+  z-index: 20;
+  transition: left 0.4s ease;
+  border-radius: 25px;
+}
+
+.menu-btn.activo{
+  transform: translateX(-180px);}
+
+.menu.abierto {
+  right: 0px;
+}
+
+.menu.show { left: 0; }
+
+.menu h3 {
+  margin-top: 65px;
+  color: cyan;
+  text-align: center;
+  margin-bottom: 20px;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  text-align: center;
+  text-align: right;
+  padding-right: 15px;
+
+}
+
+.menu li {
+  margin: 12px 0;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s;
+  text-align: right;
+}
+
+.menu a:hover {
+  color: cyan;
+  cursor: pointer;
+}
+
+.menu-footer {
+  text-align: center;
+  padding-top: 20px;
+  padding-right: 15px;
+}
+
+
+.menu-footer a {
+  display: block;
+  margin: 8px 0;
+  color: #d3d3d3;
+  text-decoration: none;
+}
+
+.menu-footer a:hover {
+  color: cyan;
+}
+
+/* ===== Header ===== */
+.container { padding: 15px; }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  z-index: 999;
+}
+
+/* ===== Buscador ===== */
+.search-box {
+  background-color: #191b21;
+  padding: 8px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.search-box input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: white;
+  outline: none;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  color: cyan;
+  font-size: 20px;
+}
+
+/* ===== Grid de películas ===== */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.movie-card {
+  background-color: #191b21;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover { transform: scale(1.05); }
+
+.movie-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.movie-card p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.movie-card span {
+  font-size: 11px;
+  color: cyan;
+}
+
+/* ===== Footer ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #191b21;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #2a2a2a;
+  z-index: 10;
+}
+
+footer button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+}
+
+footer button:not(:last-child) {
+  border-right: 1px solid #333; /* separadores verticales */
+}
+
+
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal.show { display: flex; }
+
+.modal-content {
+  background-color: #191b21;
+  padding: 15px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.tag { color: cyan; }
+.watch-btn {
+  width: 100%;
+  background: linear-gradient(90deg, cyan, violet);
+  border: none;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}

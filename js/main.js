@@ -1,1 +1,7 @@
-const btnMenu = document.getElementById('')
+const btnMenu = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
+
+btnMenu.addEventListener('click' , ()=>{
+    menu.classList.toggle('abierto');
+    btnMenu.classList.toggle('activo');
+})

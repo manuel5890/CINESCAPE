@@ -6,40 +6,123 @@ body {
   overflow-x: hidden;
 }
 
+/* === Estilos del encabezado (user-info) === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0e0f13;
+  padding: 15px 25px;
+  border-bottom: 1px solid #222;
+  color: #fff;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00ffff; /* borde tipo cian */
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px #000;
+}
+
 /* ===== Menú lateral ===== */
 .menu {
   position: fixed;
   top: 0;
-  left: 450px;
-  width: 250px;
+  right: -350px;
+  width: 180px;
   height: 100vh;
   background-color: #1b1d23;
   padding: 20px;
-  transition: left 0.3s ease;
+  transition: right 0.4s ease;
   z-index: 20;
+  transition: left 0.4s ease;
+  border-radius: 25px;
+}
+
+.menu-btn.activo{
+  transform: translateX(-180px);}
+
+.menu.abierto {
+  right: 0px;
 }
 
 .menu.show { left: 0; }
 
 .menu h3 {
+  margin-top: 65px;
   color: cyan;
+  text-align: center;
   margin-bottom: 20px;
+  text-align: right;
+  padding-right: 15px;
 }
 
-.menu ul { list-style: none; padding: 0; }
-.menu li { margin: 10px 0; }
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  text-align: center;
+  text-align: right;
+  padding-right: 15px;
+
+}
+
+.menu li {
+  margin: 12px 0;
+}
+
 .menu a {
   color: #fff;
-  text-decoration: none;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s;
+  text-align: right;
 }
-.menu a:hover { color: cyan; }
+
+.menu a:hover {
+  color: cyan;
+  cursor: pointer;
+}
 
 .menu-footer {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  display: flex;
-  flex-direction: column;
+  text-align: center;
+  padding-top: 20px;
+  padding-right: 15px;
+}
+
+
+.menu-footer a {
+  display: block;
+  margin: 8px 0;
+  color: #d3d3d3;
+  text-decoration: none;
+}
+
+.menu-footer a:hover {
+  color: cyan;
 }
 
 /* ===== Header ===== */
@@ -67,6 +150,7 @@ header {
   border: none;
   color: white;
   font-size: 22px;
+  z-index: 999;
 }
 
 /* ===== Buscador ===== */

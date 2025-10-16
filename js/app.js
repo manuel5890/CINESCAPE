@@ -1,11 +1,16 @@
 const grid = document.getElementById("movies-grid");
+const searchInput = document.querySelector("#search");
+const searchBtn = document.querySelector(".search-box button");
+
+let peliculas = []; 
 
 fetch("peliculas.json")
   .then(response => {
     if (!response.ok) throw new Error("Error al cargar el JSON");
     return response.json();
   })
-  .then(peliculas => {
+  .then(data => {
+    peliculas = data;
     mostrarPeliculas(peliculas);
   })
   .catch(error => console.error("Error:", error));
@@ -49,3 +54,17 @@ function mostrarModal(p) {
 document.getElementById("close-modal").addEventListener("click", () => {
   document.getElementById("modal").style.display = "none";
 });
+
+function buscarPeliculas() {
+  const texto = searchInput.value.trim().toLowerCase();
+
+  // filtramos las películas que coincidan con nombre o categoría
+  const resultado = peliculas.filter(p =>
+    p.nombre.toLowerCase().includes(texto) ||
+    p.categoria.toLowerCase().includes(texto)
+  );
+
+  // volvemos a mostrar solo las que coincidan
+  mostrarPeliculas(resultado);
+}
+searchInput.addEventListener("input", buscarPeliculas);

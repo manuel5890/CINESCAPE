@@ -55,43 +55,55 @@ header {
   height: 100vh;
   background-color: #1b1d23;
   padding: 20px;
-  transition: right 0.4s ease;
+  border-radius: 25px 0 0 25px;
   z-index: 20;
-  transition: left 0.4s ease;
-  border-radius: 25px;
+
+  /* Transición de entrada/salida */
+  opacity: 0;
+  transform: translateX(50px);
+  transition: right 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* --- Menú abierto --- */
+.menu.abierto {
+  right: 0;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Botón del menú --- */
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.menu-btn img {
+  transition: transform 0.5s ease, filter 0.4s ease;
 }
 
 .menu-btn.activo {
   transform: translateX(-180px);
+  transition: 0.5s;
 }
 
-.menu.abierto {
-  right: 0px;
-}
-
-.menu.show {
-  left: 0;
-}
-
+/* --- Títulos y enlaces --- */
 .menu h3 {
   margin-top: 65px;
   color: cyan;
-  text-align: center;
-  margin-bottom: 20px;
   text-align: right;
+  margin-bottom: 20px;
   padding-right: 15px;
 }
 
 .menu ul {
   list-style: none;
   padding: 0;
-  margin: 0;
   margin-top: 100px;
   margin-bottom: 150px;
-  text-align: center;
   text-align: right;
   padding-right: 15px;
-
 }
 
 .menu li {
@@ -103,32 +115,31 @@ header {
   text-decoration: underline;
   font-weight: 500;
   transition: color 0.3s;
-  text-align: right;
 }
 
 .menu a:hover {
   color: cyan;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .menu-footer {
-  text-align: center;
+  text-align: right;
   padding-top: 20px;
   padding-right: 15px;
 }
-
 
 .menu-footer a {
   display: block;
   margin: 8px 0;
   color: #d3d3d3;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 .menu-footer a:hover {
   color: cyan;
 }
+
 
 .container {
   padding: 14px;
@@ -161,7 +172,8 @@ header {
 }
 
 .search-box {
-  position: relative; /* Para posicionar el botón correctamente */
+  position: relative;
+  /* Para posicionar el botón correctamente */
   display: flex;
   align-items: center;
   padding: 7px 12px;

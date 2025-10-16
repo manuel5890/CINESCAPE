@@ -28,7 +28,7 @@ header {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #1d9bbb;
-  border: 2px solid #1d9bbb; 
+  border: 2px solid #1d9bbb;
 }
 
 .user-info p {
@@ -80,10 +80,6 @@ header {
 
 .menu-btn img {
   transition: transform 0.5s ease, filter 0.4s ease;
-  transition: right 0.4s ease;
-  z-index: 10;
-  transition: left 0.4s ease;
-  border-radius: 25px;
 }
 
 .menu-btn.activo {
@@ -91,13 +87,9 @@ header {
   transition: 0.5s;
 }
 
-/* --- Títulos y enlaces --- */
 .menu h3 {
   margin-top: 65px;
   color: cyan;
-  color: #1d9bbb;
-  text-align: center;
-  margin-bottom: 20px;
   text-align: right;
   margin-bottom: 20px;
   padding-right: 15px;
@@ -124,7 +116,7 @@ header {
 }
 
 .menu a:hover {
-  color: #1d9bbb;
+  color: cyan;
   cursor: pointer;
 }
 
@@ -143,8 +135,9 @@ header {
 }
 
 .menu-footer a:hover {
-  color: #1d9bbb;
+  color: cyan;
 }
+
 
 
 .container {
@@ -322,12 +315,15 @@ footer button:not(:last-child) {
   color: cyan;
 }
 
-.tag { color: #1d9bbb; }
+.tag {
+  color: #1d9bbb;
+}
+
 .watch-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px; 
+  gap: 15px;
   background: linear-gradient(90deg, #1d9bbb, #7a4493);
   border: none;
   border-radius: 100px;
@@ -431,27 +427,28 @@ footer button:not(:last-child) {
   z-index: 20;
 }
 
-#modal-title{
+#modal-title {
   padding-left: 28px;
   font-size: 30px;
   margin-bottom: -5px;
 }
 
-#modal-category{
+#modal-category {
   padding-left: 25px;
   font-size: 15px;
 }
 
-hr{
-  border: 0.5px solid #1d9bbb; 
+hr {
+  border: 0.5px solid #1d9bbb;
 }
 
-#modal-description{
-    padding-left: 25px;
-    font-size: 16px;
-    padding-right: 15px;
+#modal-description {
+  padding-left: 25px;
+  font-size: 16px;
+  padding-right: 15px;
 }
-#modal-reparto{
+
+#modal-reparto {
   margin-top: 35px;
   margin-bottom: -7px;
   padding-left: 25px;
@@ -459,9 +456,9 @@ hr{
   color: #1d9bbb;
 }
 
-#modal-cast{
-    padding-left: 25px;
-    font-size: 15px;
+#modal-cast {
+  padding-left: 25px;
+  font-size: 15px;
 }
 
 @keyframes fadeInBg {
@@ -491,6 +488,7 @@ hr{
     transform: translateY(0);
     opacity: 1;
   }
+
   to {
     transform: translateY(100%);
     opacity: 0;

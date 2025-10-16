@@ -55,7 +55,6 @@ function mostrarModal(p) {
 }
 
 document.getElementById("close-modal").addEventListener("click", () => {
-<<<<<<< HEAD
   document.getElementById("modal").style.display = "none";
 });
 
@@ -72,7 +71,6 @@ function buscarPeliculas() {
   mostrarPeliculas(resultado);
 }
 searchInput.addEventListener("input", buscarPeliculas);
-=======
   const modal = document.getElementById("modal");
   const modalContent = modal.querySelector(".modal-content");
 
@@ -81,5 +79,4 @@ searchInput.addEventListener("input", buscarPeliculas);
   setTimeout(() => {
     modal.style.display = "none";
   }, 400);
-});
->>>>>>> Agregué la imagen dentro del modal y mejoré los estilos correspondientes  y animaciones para que la transición al abrir y cerrar sea más fluida
+

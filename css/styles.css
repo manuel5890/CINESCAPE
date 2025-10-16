@@ -6,7 +6,6 @@ body {
   overflow-x: hidden;
 }
 
-/* === Estilos del encabezado (user-info) === */
 header {
   display: flex;
   justify-content: space-between;
@@ -28,8 +27,8 @@ header {
   height: 45px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #00ffff;
-  /* borde tipo cian */
+  border: 2px solid #1d9bbb;
+  border: 2px solid #1d9bbb; 
 }
 
 .user-info p {
@@ -56,7 +55,7 @@ header {
   background-color: #1b1d23;
   padding: 20px;
   transition: right 0.4s ease;
-  z-index: 20;
+  z-index: 10;
   transition: left 0.4s ease;
   border-radius: 25px;
 }
@@ -75,7 +74,7 @@ header {
 
 .menu h3 {
   margin-top: 65px;
-  color: cyan;
+  color: #1d9bbb;
   text-align: center;
   margin-bottom: 20px;
   text-align: right;
@@ -107,7 +106,7 @@ header {
 }
 
 .menu a:hover {
-  color: cyan;
+  color: #1d9bbb;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -127,7 +126,7 @@ header {
 }
 
 .menu-footer a:hover {
-  color: cyan;
+  color: #1d9bbb;
 }
 
 .container {
@@ -157,7 +156,7 @@ header {
   border: none;
   color: white;
   font-size: 22px;
-  z-index: 999;
+  z-index: 10;
 }
 
 .search-box {
@@ -197,6 +196,8 @@ header {
   transition: transform 0.3s ease;
   position: absolute;
   right: -1px;
+  color: #1d9bbb;
+  font-size: 20px;
 }
 
 
@@ -237,7 +238,7 @@ header {
 
 .movie-card span {
   font-size: 11px;
-  color: cyan;
+  color: #1d9bbb;
 }
 
 footer {
@@ -283,14 +284,7 @@ footer button:not(:last-child) {
   display: flex;
 }
 
-.modal-content {
-  background-color: #191b21;
-  padding: 15px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 400px;
-  position: relative;
-}
+
 
 .modal-content img {
   width: 100%;
@@ -309,16 +303,36 @@ footer button:not(:last-child) {
   color: cyan;
 }
 
+.tag { color: #1d9bbb; }
 .watch-btn {
-  width: 100%;
-  background: linear-gradient(90deg, cyan, violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; 
+  background: linear-gradient(90deg, #1d9bbb, #7a4493);
   border: none;
-  color: black;
-  padding: 10px;
-  border-radius: 10px;
-  margin-top: 15px;
+  border-radius: 100px;
+  padding: 15px 10px;
+  margin-top: 28px;
+  margin-left: 25px;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
+
+.watch-btn img {
+  width: 20px;
+  object-fit: contain;
+}
+
+.watch-btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
 
 .movies-grid {
   display: grid;
@@ -360,7 +374,7 @@ footer button:not(:last-child) {
 
 .movie-card p {
   font-size: 0.8rem;
-  color: cyan;
+  color: #1d9bbb;
   margin: 0 0 8px;
 }
 
@@ -388,13 +402,47 @@ footer button:not(:last-child) {
 .modal-content {
   background-color: #111;
   border-radius: 25px 25px 0 0;
-  width: 100%;
+  width: 100vh;
+  height: 100vh;
   max-width: 430px;
-  padding: 30px;
-  text-align: center;
+  text-align: left;
   transform: translateY(100%);
   opacity: 0;
   animation: slideUp 0.5s ease forwards;
+  z-index: 20;
+}
+
+#modal-title{
+  padding-left: 28px;
+  font-size: 30px;
+  margin-bottom: -5px;
+}
+
+#modal-category{
+  padding-left: 25px;
+  font-size: 15px;
+}
+
+hr{
+  border: 0.5px solid #1d9bbb; 
+}
+
+#modal-description{
+    padding-left: 25px;
+    font-size: 16px;
+    padding-right: 15px;
+}
+#modal-reparto{
+  margin-top: 35px;
+  margin-bottom: -7px;
+  padding-left: 25px;
+  font-size: 15px;
+  color: #1d9bbb;
+}
+
+#modal-cast{
+    padding-left: 25px;
+    font-size: 15px;
 }
 
 @keyframes fadeInBg {
@@ -419,11 +467,25 @@ footer button:not(:last-child) {
   }
 }
 
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+
 #close-modal {
   position: absolute;
-  top: 15px;
+  top: 25px;
   right: 20px;
   font-size: 1.5rem;
   color: #fff;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
 }

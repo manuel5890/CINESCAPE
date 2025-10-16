@@ -58,7 +58,14 @@ function mostrarModal(p) {
 }
 
 document.getElementById("close-modal").addEventListener("click", () => {
-  document.getElementById("modal").style.display = "none";
+  const modal = document.getElementById("modal");
+  const modalContent = modal.querySelector(".modal-content");
+
+  modalContent.style.animation = "slideDown 0.4s ease forwards";
+
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 400);
 });
 
 function buscarPeliculas() {
@@ -73,6 +80,7 @@ function buscarPeliculas() {
   // volvemos a mostrar solo las que coincidan
   mostrarPeliculas(resultado);
 }
+
 searchInput.addEventListener("input", buscarPeliculas);
 
 function filtrarPorGenero(genero) {

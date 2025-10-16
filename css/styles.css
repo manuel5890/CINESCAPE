@@ -54,9 +54,8 @@ header {
   height: 100vh;
   background-color: #1b1d23;
   padding: 20px;
-  transition: right 0.4s ease;
   z-index: 10;
-  transition: left 0.4s ease;
+  transition: right 0.5s ease;
   border-radius: 25px;
 }
 
@@ -156,7 +155,13 @@ header {
   border: none;
   color: white;
   font-size: 22px;
-  z-index: 10;
+  z-index: 11;
+  transition: right 0.7s ease;
+  transition: left 0.7s ease;
+}
+
+#search{
+  color: gray;
 }
 
 .search-box {

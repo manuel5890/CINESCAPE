@@ -444,13 +444,13 @@ footer button:not(:last-child) {
 
 #modal-title {
   padding-left: 28px;
-  font-size: 30px;
+  font-size: 22px;
   margin-bottom: -5px;
 }
 
 #modal-category {
   padding-left: 25px;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 hr {
@@ -459,12 +459,12 @@ hr {
 
 #modal-description {
   padding-left: 25px;
-  font-size: 16px;
+  font-size: 13px;
   padding-right: 15px;
 }
 
 #modal-reparto {
-  margin-top: 35px;
+  margin-top: 25px;
   margin-bottom: -7px;
   padding-left: 25px;
   font-size: 15px;

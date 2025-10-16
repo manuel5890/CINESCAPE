@@ -39,6 +39,7 @@ function mostrarPeliculas(peliculas) {
 
 function mostrarModal(p) {
   const modal = document.getElementById("modal");
+  const modalContent = modal.querySelector(".modal-content");
   const modalImg = document.getElementById("modal-img");
   const modalTitle = document.getElementById("modal-title");
   const modalCategory = document.getElementById("modal-category");
@@ -49,9 +50,11 @@ function mostrarModal(p) {
   modalTitle.textContent = p.nombre;
   modalCategory.textContent = `${p.categoria} • ${p.anio}`;
   modalDescription.textContent = p.sinopsis;
-  modalCast.textContent = `Reparto: ${p.reparto.join(", ")}`;
+  modalCast.textContent = `${p.reparto.join(", ")}`;
 
   modal.style.display = "flex";
+  modalContent.style.animation = "slideUp 0.4s ease forwards";
+
 }
 
 document.getElementById("close-modal").addEventListener("click", () => {

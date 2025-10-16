@@ -1,6 +1,9 @@
 const grid = document.getElementById("movies-grid");
 const searchInput = document.querySelector("#search");
 const searchBtn = document.querySelector(".search-box button");
+const btnAccion = document.getElementById("accion");
+const btnRomance = document.getElementById("romance");
+const btnTerror = document.getElementById("terror");
 
 let peliculas = []; 
 
@@ -71,12 +74,15 @@ function buscarPeliculas() {
   mostrarPeliculas(resultado);
 }
 searchInput.addEventListener("input", buscarPeliculas);
-  const modal = document.getElementById("modal");
-  const modalContent = modal.querySelector(".modal-content");
 
-  modalContent.style.animation = "slideDown 0.4s ease forwards";
+function filtrarPorGenero(genero) {
+  const resultado = peliculas.filter(p => 
+    p.categoria.toLowerCase() === genero.toLowerCase()
+  );
 
-  setTimeout(() => {
-    modal.style.display = "none";
-  }, 400);
+  mostrarPeliculas(resultado);
+}
 
+btnAccion.addEventListener("click", () => filtrarPorGenero("Acción"));
+btnRomance.addEventListener("click", () => filtrarPorGenero("Romance"));
+btnTerror.addEventListener("click", () => filtrarPorGenero("Terror"));

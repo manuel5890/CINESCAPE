@@ -105,10 +105,12 @@ body {
     letter-spacing: 0.8px;
     cursor: pointer;
     transition: all 0.3s ease;
-
-    text-transform: uppercase;
+    text-decoration: none;
 }
-
+#empezar a{
+    text-decoration: none;
+    color: #fff;
+}
 #empezar:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 35px rgba(0, 212, 255, 0.45);

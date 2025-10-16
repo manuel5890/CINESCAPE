@@ -109,6 +109,7 @@ header {
 .menu a:hover {
   color: cyan;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .menu-footer {

@@ -1,6 +1,9 @@
 const grid = document.getElementById("movies-grid");
 const searchInput = document.querySelector("#search");
 const searchBtn = document.querySelector(".search-box button");
+const btnAccion = document.getElementById("accion");
+const btnRomance = document.getElementById("romance");
+const btnTerror = document.getElementById("terror");
 
 let peliculas = []; 
 
@@ -68,3 +71,15 @@ function buscarPeliculas() {
   mostrarPeliculas(resultado);
 }
 searchInput.addEventListener("input", buscarPeliculas);
+
+function filtrarPorGenero(genero) {
+  const resultado = peliculas.filter(p => 
+    p.categoria.toLowerCase() === genero.toLowerCase()
+  );
+
+  mostrarPeliculas(resultado);
+}
+
+btnAccion.addEventListener("click", () => filtrarPorGenero("Acción"));
+btnRomance.addEventListener("click", () => filtrarPorGenero("Romance"));
+btnTerror.addEventListener("click", () => filtrarPorGenero("Terror"));
